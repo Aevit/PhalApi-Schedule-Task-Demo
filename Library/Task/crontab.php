@@ -4,7 +4,7 @@ require_once dirname(__FILE__) . '/../../Public/init.php';
 
 DI()->loader->addDirs(array('./Demo', './Library', './Library/Task/Task', './Task'));
 
-var_dump('start a crontab');
+// var_dump('start a crontab');
 
 //更改日记纪录 - 以防apps和nobody用户有权限冲突
 DI()->logger = new PhalApi_Logger_File(API_ROOT . '/Runtime/task',
