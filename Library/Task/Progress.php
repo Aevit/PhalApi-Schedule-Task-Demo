@@ -1,7 +1,7 @@
 <?php
 /**
  * 计划任务进程类
- * 
+ *
  * @author dogstar <chanzonghuang@gmail.com> 20150520
  */
 
@@ -23,7 +23,7 @@ class Task_Progress {
 
     /**
      * 进行进程调度
-     * 
+     *
      * - 1、尝试修复异常的任务
      * - 2、执行全部空闲的任务
      */

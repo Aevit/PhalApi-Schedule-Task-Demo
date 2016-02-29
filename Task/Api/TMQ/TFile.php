@@ -1,11 +1,11 @@
 <?php
 /**
- * Redis MQ触发类
+ * MQ计划任务处理类
  *
  * @author: Aevit 20160228
  */
 
-class Api_MQ_Redis extends PhalApi_Api {
+class Api_TMQ_TFile extends PhalApi_Api {
 
 	public function getRules() {
         return array(
@@ -13,7 +13,7 @@ class Api_MQ_Redis extends PhalApi_Api {
     			'yourParam' => array(
 					'name' => 'your_param',
 					'type' => 'string',
-					'default' => 'hey, guys, this is Redis MQ Type',
+					'default' => '',
 					'require' => false,
 					'desc' => '这是你自定义的参数',
     			),
@@ -28,11 +28,11 @@ class Api_MQ_Redis extends PhalApi_Api {
 	 * @return string msg 提示信息
 	 */
 	public function go() {
-		$rs = array('code' => 0, 'msg' => '');
+			$rs = array('code' => 0, 'msg' => '');
 
-		$domain = new Domain_MQ_Redis();
-		$domain->asyncGo($this->yourParam);
+			$domain = new Domain_TMQ_TFile();
+			$domain->doSth($this->yourParam);
 
-		return $rs;
+			return $rs;
 	}
 }

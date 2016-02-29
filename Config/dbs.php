@@ -26,10 +26,20 @@ return array(
     'tables' => array(
         //通用路由
         '__default__' => array(
-            'prefix' => 'tbl_',
+            'prefix' => 'phalapi_',
             'key' => 'id',
             'map' => array(
                 array('db' => 'db_demo'),
+            ),
+        ),
+
+        //10张表，可根据需要，自行调整表前缀、主键名和路由
+        'task_mq' => array(
+            'prefix' => 'phalapi_',
+            'key' => 'id',
+            'map' => array(
+                array('db' => 'db_demo'),
+                array('start' => 0, 'end' => 9, 'db' => 'db_demo'),
             ),
         ),
 

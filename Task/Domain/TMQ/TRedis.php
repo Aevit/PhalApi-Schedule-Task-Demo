@@ -1,6 +1,6 @@
 <?php
 
-class Domain_TaskMQ {
+class Domain_TMQ_TRedis {
 
     public function doSth($yourParam = '') {
 

@@ -1,27 +1,27 @@
 <?php
 /**
- * PhpUnderControl_ApiTaskMQ_Test
+ * PhpUnderControl_ApiTMQTRedis_Test
  *
- * 针对 ../../Api/TaskMQ.php Api_TaskMQ 类的PHPUnit单元测试
+ * 针对 ../../../Api/TMQ//TRedis.php Api_TMQ_TRedis 类的PHPUnit单元测试
  *
- * @author: Aevit 20160228
+ * @author: Aevit 20160229
  */
 
-require_once dirname(__FILE__) . '/../test_env.php';
+require_once dirname(__FILE__) . '/../../test_env.php';
 
-if (!class_exists('Api_TaskMQ')) {
-    require dirname(__FILE__) . '/../../Api/TaskMQ.php';
+if (!class_exists('Api_TMQ_TRedis')) {
+    require dirname(__FILE__) . '/../../../Api/TMQ//TRedis.php';
 }
 
-class PhpUnderControl_ApiTaskMQ_Test extends PHPUnit_Framework_TestCase
+class PhpUnderControl_ApiTMQTRedis_Test extends PHPUnit_Framework_TestCase
 {
-    public $apiTaskMQ;
+    public $apiTMQTRedis;
 
     protected function setUp()
     {
         parent::setUp();
 
-        $this->apiTaskMQ = new Api_TaskMQ();
+        $this->apiTMQTRedis = new Api_TMQ_TRedis();
     }
 
     protected function tearDown()
@@ -34,7 +34,7 @@ class PhpUnderControl_ApiTaskMQ_Test extends PHPUnit_Framework_TestCase
      */
     public function testGetRules()
     {
-        $rs = $this->apiTaskMQ->getRules();
+        $rs = $this->apiTMQTRedis->getRules();
     }
 
     /**
@@ -43,7 +43,7 @@ class PhpUnderControl_ApiTaskMQ_Test extends PHPUnit_Framework_TestCase
     public function testGo()
     {
         //Step 1. 构建请求URL
-        $url = 'app_key=mini&sign=&service=TaskMQ.Go';
+        $url = 'app_key=mini&sign=&service=TMQ_TRedis.Go';
 
         //Step 2. 执行请求
         $rs = PhalApi_Helper_TestRunner::go($url);
@@ -54,6 +54,7 @@ class PhpUnderControl_ApiTaskMQ_Test extends PHPUnit_Framework_TestCase
         $this->assertArrayHasKey('code', $rs);
 
         $this->assertEquals(0, $rs['code']);
+
     }
 
 }

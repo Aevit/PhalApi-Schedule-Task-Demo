@@ -23,16 +23,16 @@ class Api_MQ_File extends PhalApi_Api {
 
 	/**
 	 * Redis MQ触发接口
-	 * @desc 触发Redis MQ的接口，增加一个计划任务
+	 * @desc 触发File MQ的接口，增加一个计划任务
 	 * @return int code 结果状态，0表示正常返回
 	 * @return string msg 提示信息
 	 */
 	public function go() {
-			$rs = array('code' => 0, 'msg' => '');
-			
-			$domain = new Domain_MQ_File();
-			$domain->asyncGo($this->yourParam);
+		$rs = array('code' => 0, 'msg' => '');
 
-			return $rs;
+		$domain = new Domain_MQ_File();
+		$domain->asyncGo($this->yourParam);
+
+		return $rs;
 	}
 }

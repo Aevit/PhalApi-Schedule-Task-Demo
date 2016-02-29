@@ -37,6 +37,7 @@ SL('zh_cn');
 DI()->loader->addDirs('Library');
 $mq = new Task_MQ_Redis();  // Redis MQ，请使用此句代码
 // $mq = new Task_MQ_File(); // 文件MQ，请使用此句代码
+// $mq = new Task_MQ_DB(); // DB MQ，请使用此句代码
 DI()->taskLite = new Task_Lite($mq);
 
 /**

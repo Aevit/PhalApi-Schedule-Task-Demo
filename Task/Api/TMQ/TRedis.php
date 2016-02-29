@@ -5,7 +5,7 @@
  * @author: Aevit 20160228
  */
 
-class Api_TaskMQ extends PhalApi_Api {
+class Api_TMQ_TRedis extends PhalApi_Api {
 
 	public function getRules() {
         return array(
@@ -30,7 +30,7 @@ class Api_TaskMQ extends PhalApi_Api {
 	public function go() {
 			$rs = array('code' => 0, 'msg' => '');
 
-			$domain = new Domain_TaskMQ();
+			$domain = new Domain_TMQ_TRedis();
 			$domain->doSth($this->yourParam);
 
 			return $rs;
