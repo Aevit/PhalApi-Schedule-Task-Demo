@@ -10,6 +10,10 @@ require_once dirname(__FILE__) . '/../../Public/init.php';
 
 DI()->loader->addDirs(array('Demo', 'Library'));
 
+DI()->filter = null;
+
+DI()->debug = true;
+
 //日记纪录 - Explorer
 DI()->logger = new PhalApi_Logger_Explorer(
 	PhalApi_Logger::LOG_LEVEL_DEBUG | PhalApi_Logger::LOG_LEVEL_INFO | PhalApi_Logger::LOG_LEVEL_ERROR);

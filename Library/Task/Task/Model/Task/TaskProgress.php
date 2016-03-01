@@ -15,7 +15,7 @@ class Model_Task_TaskProgress extends PhalApi_Model_NotORM {
 
     public function getWrongItems($maxLastFireTime) {
         $rows = $this->getORM()
-            ->select('id')
+            ->select('id, title')
             ->where('state != ?', self::STATE_WAITTING)
             ->where('last_fire_time < ?', $maxLastFireTime)
             ->where('enable = ?', self::ENABLE_ON)
